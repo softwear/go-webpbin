@@ -3,9 +3,10 @@ package webpbin
 import (
 	"errors"
 	"fmt"
-	"github.com/nickalie/go-binwrapper"
 	"image"
 	"io"
+
+	"github.com/nickalie/go-binwrapper"
 )
 
 type cropInfo struct {
@@ -34,7 +35,7 @@ func NewCWebP() *CWebP {
 		BinWrapper: createBinWrapper(),
 		quality:    -1,
 	}
-	bin.ExecPath("cwebp")
+	bin.ExecPath("docker run -it --rm -v /usr/local:/data elswork/cwebp cwebp")
 
 	return bin
 }

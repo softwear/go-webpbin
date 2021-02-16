@@ -35,7 +35,8 @@ func NewCWebP() *CWebP {
 		BinWrapper: createBinWrapper(),
 		quality:    -1,
 	}
-	bin.ExecPath("cwebp")
+	fmt.Println("c")
+	bin.ExecPath("docker run -it --rm -v /usr/local:/data elswork/cwebp cwebp")
 
 	return bin
 }
